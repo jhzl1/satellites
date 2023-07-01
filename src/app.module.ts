@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
-import { TopsecretModule } from './topsecret/topsecret.module';
+import { TopsecretModule } from './controllers/topsecret/topsecret.module';
+import { HealtcheckModule } from './controllers/healtcheck/healtcheck.module';
 
 @Module({
-  imports: [TopsecretModule],
+  imports: [TopsecretModule, HealtcheckModule],
   controllers: [],
   providers: [],
 })

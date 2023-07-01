@@ -1,11 +1,12 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Satellite } from 'src/models/Satellite';
+
+import { Satellites } from 'src/controllers/topsecret/interfaces/satellites.interface';
+import { calculate, Vector } from 'weighted-positioning';
 import {
   BaseMessagesAndSatellites,
   MessagesAndSatellitesWithRequiredName,
-} from 'src/topsecret/dto/messages-and-satellites.dto';
-import { Satellites } from 'src/topsecret/interfaces/satellites.interface';
-import { calculate, Vector } from 'weighted-positioning';
+} from 'src/controllers/topsecret/dto/messages-and-satellites.dto';
 
 const kenobi = new Satellite('kenobi', -500, -200);
 const skywalker = new Satellite('skywalker', 100, -100);
