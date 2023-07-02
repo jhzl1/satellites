@@ -1,0 +1,110 @@
+{
+    "info": {
+        "_postman_id": "b5f497d7-bf51-47eb-9d20-c28abc9563c6",
+        "name": "satellites",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "description": ""
+    },
+    "item": [
+        {
+            "name": "healtcheck",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "https://satellites-production.up.railway.app/api/healtcheck",
+                    "path": [
+                        "api",
+                        "healtcheck"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "satellites-production",
+                        "up",
+                        "railway",
+                        "app"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "topsecret_split",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://satellites-production.up.railway.app/api/topsecret_split/sato",
+                    "path": [
+                        "api",
+                        "topsecret_split",
+                        "sato"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "satellites-production",
+                        "up",
+                        "railway",
+                        "app"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "{\n  \"distance\": 100,\n  \"message\": [\"aquel\", \"es\", \"\", \"\", \"\"]\n}"
+                }
+            }
+        },
+        {
+            "name": "topsecret_split",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "https://satellites-production.up.railway.app/api/topsecret_split/sato",
+                    "path": [
+                        "api",
+                        "topsecret_split",
+                        "sato"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "satellites-production",
+                        "up",
+                        "railway",
+                        "app"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "topsecret",
+            "request": {
+                "method": "POST",
+                "url": {
+                    "raw": "https://satellites-production.up.railway.app/api/topsecret",
+                    "path": [
+                        "api",
+                        "topsecret"
+                    ],
+                    "protocol": "https",
+                    "host": [
+                        "satellites-production",
+                        "up",
+                        "railway",
+                        "app"
+                    ]
+                },
+                "body": {
+                    "mode": "raw",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    },
+                    "raw": "[\n{\n  \"name\": \"skywalker\",\n  \"distance\": 115.5,\n  \"message\": [\"\", \"es\", \"\", \"\", \"secreto\"]\n},\n{\n  \"name\": \"kenobi\",\n  \"distance\": 100.0,\n  \"message\": [\"este\", \"es\", \"\", \"\", \"\"]\n},\n{\n  \"name\": \"sato\",\n  \"distance\": 120.5,\n  \"message\": [\"\", \"es\", \"\", \"mensaje\", \"\"]\n}\n]"
+                }
+            }
+        }
+    ]
+}
