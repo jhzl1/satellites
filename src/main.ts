@@ -9,12 +9,13 @@ async function bootstrap() {
   const config = new DocumentBuilder()
     .setTitle('Satellites API')
     .setDescription('Prueba Koaj')
+    .addServer('https://satellites-production.up.railway.app/')
     .setVersion('1.0')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api-docs', app, document);
 
-  app.setGlobalPrefix('api');
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,

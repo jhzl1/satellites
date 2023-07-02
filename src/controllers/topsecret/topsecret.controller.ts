@@ -13,12 +13,22 @@ import {
   MessagesAndSatellitesWithRequiredName,
 } from './dto/messages-and-satellites.dto';
 import { Satellites } from './interfaces/satellites.interface';
+import { ApiBody, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { SatellitePosition } from './entities/satellite-position';
 
+@ApiTags('Satellites')
 @Controller()
 export class TopsecretController {
   constructor(private readonly satellitesService: SatellitesService) {}
 
   @Post('topsecret')
+  @ApiBody({
+    type: MessagesAndSatellitesWithRequiredName,
+    isArray: true,
+    required: true,
+  })
+  @ApiResponse({ status: 404, description: 'Bad request' })
+  @ApiResponse({ status: 200, type: SatellitePosition })
   setSatellitesAndMessages(
     @Body(
       new ParseArrayPipe({
@@ -35,6 +45,11 @@ export class TopsecretController {
   }
 
   @Get('topsecret_split/:satellite_name')
+  @ApiResponse({ status: 200, description: 'OK', type: SatellitePosition })
+  @ApiResponse({
+    status: 404,
+    description: 'Bad request',
+  })
   getSatellitePosition(
     @Param('satellite_name')
     satelliteName: Satellites,
@@ -45,6 +60,11 @@ export class TopsecretController {
   }
 
   @Post('topsecret_split/:satellite_name')
+  @ApiResponse({ status: 200, description: 'OK', type: SatellitePosition })
+  @ApiResponse({
+    status: 404,
+    description: 'Bad request',
+  })
   updateSatelliteInfo(
     @Param('satellite_name')
     satelliteName: Satellites,
